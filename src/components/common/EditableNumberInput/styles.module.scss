@@ -1,0 +1,13 @@
+@import 'src/style/color.scss';
+
+.input {
+  max-width: 2.5em;
+  appearence: none;
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid $grey-88;
+
+  &:focus {
+    outline: 3px solid $yellow;
+  }
+}

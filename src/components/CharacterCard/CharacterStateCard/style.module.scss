@@ -1,0 +1,37 @@
+@import 'src/style/color.scss';
+
+.stateGroup {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.playerStateWrapper {
+  margin: 0.5em 0 1em 0;
+  padding: 1em 1em 0.5em 1em;
+  border-radius: 5px;
+  background: $grey-f0;
+}
+
+.baseInfoBlock {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+.healthBlock {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.goldIcon {
+  color: $yellow;
+}
+
+.tooltip {
+  padding: 0.5em 0.2em 0.5em 0.2em;
+}
+
+.healthIcon {
+  color: $red;
+}

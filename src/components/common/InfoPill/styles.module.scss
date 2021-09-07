@@ -1,0 +1,11 @@
+.infoPill {
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+  padding: 1px 10px 1px 10px;
+  margin: 5px 0 5px 0;
+}
+
+.infoPill:nth-child(2n) {
+  margin-left: 5px;
+}

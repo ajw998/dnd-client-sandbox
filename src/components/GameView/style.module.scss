@@ -1,0 +1,33 @@
+@import 'src/style/mixins.scss';
+@import 'src/style/variables.scss';
+
+.gameView {
+  height: 100%;
+  display: grid;
+  margin: 0 auto;
+
+  @include sm {
+    grid-template-rows: 40px minmax(0, 1fr);
+    grid-template-areas:
+      'view-switcher'
+      'characters';
+    row-gap: 0.5em;
+  }
+
+  @include md {
+    grid-template-rows: 40px minmax(0, 1fr);
+    grid-template-areas:
+      'view-switcher'
+      'characters';
+    row-gap: 0.5em;
+  }
+
+  @include lg {
+    grid-template-areas:
+      'view-switcher sidebar'
+      'characters sidebar';
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: 40px minmax(0, 1fr);
+    row-gap: 0.5em;
+  }
+}

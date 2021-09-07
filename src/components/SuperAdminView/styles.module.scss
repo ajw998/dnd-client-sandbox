@@ -1,0 +1,21 @@
+@import 'src/style/variables.scss';
+@import 'src/style/mixins.scss';
+@import 'src/style/color.scss';
+
+.main {
+  display: grid;
+  padding: $global-content-padding;
+}
+
+.header {
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+.actionButton {
+  font-size: 1.5em;
+  border: none;
+  color: $accent;
+  background: $black;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+}

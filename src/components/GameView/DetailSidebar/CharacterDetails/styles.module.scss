@@ -1,0 +1,12 @@
+@import 'src/style/color';
+
+.characterName {
+  font-weight: 900;
+  font-size: 2em;
+}
+
+.sectionTitle {
+  color: $accent;
+  text-transform: uppercase;
+  font-weight: 700;
+}

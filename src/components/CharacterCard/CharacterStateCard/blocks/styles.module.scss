@@ -1,0 +1,28 @@
+@import 'src/style/color.scss';
+
+.block {
+  display: flex;
+}
+
+.criticalHealth {
+  animation: blinker 3s infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.goldIcon {
+  color: $yellow;
+}
+
+.tooltip {
+  padding: 0.5em 0.2em 0.5em 0.2em;
+}
+
+.input {
+  border: none;
+  max-width: 2em;
+}

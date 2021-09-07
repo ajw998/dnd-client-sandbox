@@ -1,0 +1,26 @@
+@import 'src/style/color.scss';
+@import 'src/style/mixins.scss';
+@import 'src/style/variables.scss';
+
+.detailSidebar {
+  background: $grey-fc;
+  padding: 2em 2em 2em 2em;
+  grid-area: sidebar;
+
+  @include xs {
+    display: none;
+  }
+
+  @include sm {
+    display: none;
+  }
+
+  @include md {
+    display: none;
+  }
+
+  @include lg {
+    border-left: 1px solid lightgrey;
+    display: block;
+  }
+}

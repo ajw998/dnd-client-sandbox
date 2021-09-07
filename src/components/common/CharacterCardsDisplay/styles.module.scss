@@ -1,0 +1,29 @@
+@import 'src/style/variables.scss';
+@import 'src/style/mixins.scss';
+
+.cardCollection {
+  grid-area: characters;
+  display: flex;
+  padding: $global-content-padding;
+  transition: 1s;
+  overflow: auto;
+  justify-content: center;
+
+  @include xs {
+    flex-direction: column;
+  }
+
+  @include sm {
+    flex-direction: column;
+  }
+
+  @include md {
+    flex-direction: row;
+  }
+
+  @include lg {
+    flex-direction: row;
+    justify-content: center;
+    overflow: auto;
+  }
+}

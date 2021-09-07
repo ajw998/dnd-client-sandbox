@@ -1,0 +1,76 @@
+@import 'src/style/color.scss';
+@import 'src/style/mixins.scss';
+
+.characterCard {
+  animation: fade 1s ease-in;
+  background: $white;
+  border: 1px solid $grey-b0;
+  border-radius: 5px;
+  height: max-content;
+  min-width: 20%;
+  margin-bottom: 1em;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+  display: grid;
+  cursor: pointer;
+  grid-template-areas:
+    'meta'
+    'critical-info'
+    'abilities-and-skills';
+}
+
+.selected {
+  background-color: $light-yellow;
+  border: 2px solid $yellow;
+}
+
+.meta {
+  grid-area: meta;
+}
+
+.abilitiesAndSkillsSection {
+  grid-area: abilities-and-skills;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+}
+
+.characterCard:hover {
+  box-shadow: 3px 3px 5px lightgrey;
+}
+
+.characterCard:nth-child(n) {
+  margin-right: 10px;
+}
+
+.infoPillBlock {
+  text-align: center;
+}
+
+.playerName {
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+  color: $black;
+}
+
+.playerClass {
+  margin-top: 5px;
+  text-align: center;
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+.expandArrow {
+  cursor: pointer;
+  text-align: center;
+  padding: 1px;
+}
+
+.expandArrow:hover {
+  transition: 0.5s linear;
+  background: $grey-f0;
+}

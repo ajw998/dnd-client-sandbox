@@ -1,0 +1,43 @@
+@import 'src/style/mixins';
+
+.main {
+  display: grid;
+  height: 100vh;
+
+  @include xs {
+    grid-template-rows: 50px 1fr 20px;
+    grid-template-areas:
+      'nav'
+      'content'
+      'footer';
+  }
+
+  @include sm {
+    grid-template-rows: 50px 1fr 20px;
+    grid-template-areas:
+      'nav'
+      'content'
+      'footer';
+  }
+
+  @include md {
+    grid-template-rows: 50px 1fr 30px;
+    grid-template-areas:
+      'nav'
+      'content'
+      'footer';
+  }
+
+  @include lg {
+    grid-template-columns: $navbar-width auto;
+    grid-template-rows: 40px minmax(200px, 1fr) 30px;
+    grid-template-areas:
+      'nav content'
+      'nav content'
+      'nav footer';
+  }
+}
+
+.content {
+  grid-area: content;
+}

@@ -1,0 +1,33 @@
+@import 'color';
+
+$background: $white;
+
+$row-gap: 15px;
+
+$global-downwards-shift: 1em;
+
+$navbar-width: 60px;
+
+$global-content-padding: 1em 1em 1em 1em;
+
+$input-box-line-height: 1.5;
+
+/* Set using BrowserStack's recommendation 
+  See https://www.browserstack.com/guide/what-are-css-and-media-query-breakpoints
+  */
+/* Extra-small devices (iPhone X size, up to 375px and up) */
+$screen-xs-min: 375px;
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+$screen-sm-min: 600px;
+
+/* Medium devices (landscape tablets, 768px and up) */
+$screen-md-min: 768px;
+
+/* Large devices (laptops/desktops, 992px and up) */
+$screen-lg-min: 992px;
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+$screen-xl-min: 1200px;
+
+$screen-iPhoneX-min: 375px;
