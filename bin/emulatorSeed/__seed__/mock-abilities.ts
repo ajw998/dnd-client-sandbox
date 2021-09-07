@@ -1,9 +1,6 @@
-export const mockAbilityIndex = ['mock-fighter', 'mock-dwarf', 'mock-rogue']
-
-export const mockAbilityStats = [
-  {
-    id: 'mock-fighter',
-    data: {
+export const mockAbilityStats = {
+  'mock-fighter': {
+    ability: {
       strength: 16,
       dexterity: 9,
       constitution: 15,
@@ -11,10 +8,21 @@ export const mockAbilityStats = [
       wisdom: 13,
       charisma: 14,
     },
+    state: {
+      level: 2,
+      armor: 14,
+      initiative: 3,
+      speed: 30,
+      maxHp: 20,
+      hp: 2,
+      hitDice: '1d10',
+      deathSaves: { success: 2, failures: 0 },
+      xp: 675,
+      gold: 11,
+    },
   },
-  {
-    id: 'mock-dwarf',
-    data: {
+  'mock-dwarf': {
+    ability: {
       strength: 14,
       dexterity: 8,
       constitution: 15,
@@ -22,10 +30,21 @@ export const mockAbilityStats = [
       wisdom: 16,
       charisma: 12,
     },
+    state: {
+      level: 2,
+      armor: 17,
+      initiative: -1,
+      speed: 30,
+      maxHp: 15,
+      hp: 9,
+      hitDice: '1d8',
+      deathSaves: { success: 0, failures: 0 },
+      xp: 425,
+      gold: 3,
+    },
   },
-  {
-    id: 'mock-rogue',
-    data: {
+  'mock-rogue': {
+    ability: {
       strength: 8,
       dexterity: 16,
       constitution: 12,
@@ -33,10 +52,21 @@ export const mockAbilityStats = [
       wisdom: 10,
       charisma: 16,
     },
+    state: {
+      level: 2,
+      armor: 17,
+      initiative: -1,
+      speed: 30,
+      maxHp: 18,
+      hp: 11,
+      hitDice: '1d8',
+      deathSaves: { success: 1, failures: 0 },
+      xp: 575,
+      gold: 6,
+    },
   },
-  {
-    id: 'mock-wizard',
-    data: {
+  'mock-wizard': {
+    ability: {
       strength: 10,
       dexterity: 15,
       constitution: 14,
@@ -44,5 +74,17 @@ export const mockAbilityStats = [
       wisdom: 12,
       charisma: 8,
     },
+    state: {
+      level: 1,
+      armor: 12,
+      initiative: 2,
+      speed: 30,
+      maxHp: 8,
+      hp: 5,
+      hitDice: '1d6',
+      deathSaves: { success: 1, failures: 0 },
+      xp: 225,
+      gold: 10,
+    },
   },
-]
+};
