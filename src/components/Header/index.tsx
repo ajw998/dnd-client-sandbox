@@ -16,7 +16,7 @@ const Header = ({ role = 'player' }: HeaderProps) => {
           Home
         </Link>
         <Link activeClassName={style.active} href='/dungeon-master'>
-          John
+          DM
         </Link>
       </nav>
     </header>

@@ -1,5 +1,9 @@
 export const mockAbilityStats = {
   'mock-fighter': {
+    meta: {
+      class: 'fighter',
+      name: 'Salazar Turami',
+    },
     ability: {
       strength: 16,
       dexterity: 9,
@@ -16,12 +20,16 @@ export const mockAbilityStats = {
       maxHp: 20,
       hp: 2,
       hitDice: '1d10',
-      deathSaves: { success: 2, failures: 0 },
+      deathSaves: { successes: 2, failures: 0 },
       xp: 675,
       gold: 11,
     },
   },
   'mock-dwarf': {
+    meta: {
+      class: 'dwarf',
+      name: 'Vondal Battlehammer',
+    },
     ability: {
       strength: 14,
       dexterity: 8,
@@ -38,12 +46,16 @@ export const mockAbilityStats = {
       maxHp: 15,
       hp: 9,
       hitDice: '1d8',
-      deathSaves: { success: 0, failures: 0 },
+      deathSaves: { successes: 0, failures: 0 },
       xp: 425,
       gold: 3,
     },
   },
   'mock-rogue': {
+    meta: {
+      class: 'rogue',
+      name: 'Reed Greenbottle',
+    },
     ability: {
       strength: 8,
       dexterity: 16,
@@ -60,12 +72,16 @@ export const mockAbilityStats = {
       maxHp: 18,
       hp: 11,
       hitDice: '1d8',
-      deathSaves: { success: 1, failures: 0 },
+      deathSaves: { successes: 1, failures: 0 },
       xp: 575,
       gold: 6,
     },
   },
   'mock-wizard': {
+    meta: {
+      class: 'wizard',
+      name: 'Naivara Ilphelkiir',
+    },
     ability: {
       strength: 10,
       dexterity: 15,
@@ -82,7 +98,7 @@ export const mockAbilityStats = {
       maxHp: 8,
       hp: 5,
       hitDice: '1d6',
-      deathSaves: { success: 1, failures: 0 },
+      deathSaves: { successes: 1, failures: 0 },
       xp: 225,
       gold: 10,
     },

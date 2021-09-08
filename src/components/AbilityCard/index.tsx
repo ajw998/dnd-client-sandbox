@@ -13,7 +13,7 @@ export interface AbilityCardProps {
   stats: Record<string, number> | undefined;
 }
 
-const ABILITY_ROW_UPDATE_COLOUR = '#e5ae38';
+const ABILITY_ROW_UPDATE_COLOUR = '#f7e6c3';
 
 const AbilityRow = ({ name, value }: AbilityRowProps) => {
   const [backgroundColor, setBackgroundColor] = useState('inherit');
@@ -55,3 +55,5 @@ export const AbilityCard = ({ title, stats }: AbilityCardProps) => {
 
   return <section className={styles['abilityCard']}>{statRows}</section>;
 };
+
+export default memo(AbilityCard, (prev, next) => prev === next);

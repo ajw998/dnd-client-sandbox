@@ -1,5 +1,10 @@
 export type CharacterState<T> = T;
 
+export interface CharacterMeta {
+  class: DND5eClass;
+  name: string;
+}
+
 export interface DND5ePlayerAbility {
   strength: number;
   dexterity: number;
@@ -8,6 +13,18 @@ export interface DND5ePlayerAbility {
   wisdom: number;
   charisma: number;
 }
+
+export type DND5eClass =
+  | 'fighter'
+  | 'barbarian'
+  | 'bard'
+  | 'cleric'
+  | 'monk'
+  | 'paladin'
+  | 'rogue'
+  | 'sorcerer'
+  | 'warlock'
+  | 'wizard';
 
 export interface DND5eCharacterState {
   armor: number;
@@ -30,6 +47,15 @@ export type PlayerAbility<T> = {
 };
 
 export interface CharacterStats<T, U> {
+  meta: CharacterMeta;
   ability: PlayerAbility<T>;
   state: CharacterState<U>;
 }
+
+// Application-defined character roles
+export type CharacterRole =
+  | 'player'
+  | 'companion'
+  | 'ally'
+  | 'enemy'
+  | 'unknown';

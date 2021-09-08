@@ -1,14 +1,21 @@
 import { h } from 'preact';
 import GoldBlock from './blocks/Gold';
+import DeathSavesBlock from './blocks/DeathSaves';
 
 interface PlayerStateCardProps {
   state: PlayerState;
+}
+
+interface DeathSaves {
+  successes: number;
+  failures: number;
 }
 
 interface PlayerState {
   armor: number;
   gold: number;
   hitDice: string;
+  deathSaves: DeathSaves;
   hp: number;
   initiative: number;
   level: number;
@@ -20,6 +27,7 @@ interface PlayerState {
 export const PlayerStateCard = ({ state }: PlayerStateCardProps) => {
   return (
     <div>
+      <DeathSavesBlock successes={ state.deathSaves.successes } failures={ state.deathSaves.failures }/>
       <section>
         <b>Level</b>: {state.level}
       </section>

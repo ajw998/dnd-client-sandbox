@@ -4,7 +4,6 @@ import App from './components/app';
 
 import { store } from './store';
 import { Provider } from 'react-redux';
-import { ReactElement } from 'react';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { firebaseApp } from './firebase';
 import { createFirestoreInstance } from 'redux-firestore';
@@ -16,7 +15,7 @@ const rrfProps = {
   createFirestoreInstance,
 };
 
-const WrappedApp = (): ReactElement => (
+const WrappedApp = () => (
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rrfProps}>
       <App />

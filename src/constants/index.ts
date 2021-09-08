@@ -20,7 +20,7 @@ export const ABILITY_ABBREVIATION: DND5EPlayerAbilityAbbreviation = {
 
 export const CHARACTER_ROLE = {
   player: 'PLAYER',
-  companion: 'COMPANION',
+  companion: 'PARTY',
   ally: 'ALLY',
   enemy: 'ENEMY',
   unknown: 'UNKNOWN',
@@ -29,8 +29,8 @@ export const CHARACTER_ROLE = {
 // Map character role to a theme colour
 export const CHARACTER_ROLE_COLOUR = {
   player: '',
-  companion: 'green',
-  ally: 'blue',
-  enemy: 'red',
-  unknown: 'grey',
+  companion: '#6d904f',
+  ally: '#30a2da',
+  enemy: '#fc4f30',
+  unknown: '#8b8b8b',
 };

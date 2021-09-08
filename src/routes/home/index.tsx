@@ -22,10 +22,11 @@ const Home = () => {
     cards = Object.entries(players).map(([key, value], index) => {
       return (
         <CharacterCard
+          characterClass={value.meta.class}
           key={index}
           id={key}
           isPlayable={false}
-          name={key}
+          name={value.meta.name ?? 'unknown'}
           playerStats={value}
         />
       );
@@ -34,7 +35,6 @@ const Home = () => {
 
   return (
     <div className={style.home}>
-      <h1>DnD Testing Ground</h1>
       <div style={{ display: 'flex' }}>{cards}</div>
     </div>
   );

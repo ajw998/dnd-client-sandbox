@@ -1,3 +1,4 @@
+import type { CharacterRole } from '../types';
 import type { CharacterCardProps } from '../components/CharacterCard';
 
 type CharacterRoleData = Pick<
@@ -9,8 +10,11 @@ export const getCharacterRole = ({
   isPlayable,
   isParty,
   role,
-}: CharacterRoleData): Array<string> => {
+}: CharacterRoleData): Array<CharacterRole> => {
   if (!isPlayable && !isParty && !role) return ['unknown'];
   if (isPlayable) return ['player'];
-  return [...(isParty ? ['companion'] : []), ...(role ?? [])];
+  return [
+    ...(isParty ? ['companion'] : []),
+    ...(role ?? []),
+  ] as Array<CharacterRole>;
 };
