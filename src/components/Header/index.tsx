@@ -1,6 +1,5 @@
 import { h } from 'preact';
-import { Link } from 'preact-router/match';
-import style from './style.css';
+import style from './style.module.css';
 import { HEADERS } from '../../constants/index';
 
 export interface HeaderProps {
@@ -10,15 +9,7 @@ export interface HeaderProps {
 const Header = ({ role = 'player' }: HeaderProps) => {
   return (
     <header class={style.header}>
-      <h1>{HEADERS[role]}</h1>
-      <nav>
-        <Link activeClassName={style.active} href='/'>
-          Home
-        </Link>
-        <Link activeClassName={style.active} href='/dungeon-master'>
-          DM
-        </Link>
-      </nav>
+      <h1 className={ style['title'] }>{HEADERS[role]}</h1>
     </header>
   );
 };

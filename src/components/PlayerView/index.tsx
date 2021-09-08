@@ -8,19 +8,28 @@ import type {
   DND5ePlayerAbility,
   DND5eCharacterState,
 } from '../../types';
-import { CharacterCard } from '../../components/CharacterCard';
+import { CharacterCard } from '../CharacterCard';
 
-const Home = () => {
+const PlayerView = () => {
   // TODO - There is a double re-render here
   // TODO use table-layout to prevent reflow
   useFirestoreConnect('players');
+
+  let cards;
 
   const players: CharacterStats<
     DND5ePlayerAbility,
     DND5eCharacterState,
     DND5eCharacterSkills
   > = useAppSelector((state) => state.firestore.data.players);
-  let cards;
+
+  if (!isLoaded(players)) {
+    return <span>Loading...</span>
+  }
+
+  if (isEmpty(players)) {
+    return <div className={style.home}>Empty</div>
+  }
 
   if (players) {
     cards = Object.entries(players).map(([key, value], index) => {
@@ -39,9 +48,9 @@ const Home = () => {
 
   return (
     <div className={style.home}>
-      <div style={{ height: '1200px', display: 'flex' }}>{cards}</div>
+      {cards}
     </div>
   );
 };
 
-export default Home;
+export default PlayerView;

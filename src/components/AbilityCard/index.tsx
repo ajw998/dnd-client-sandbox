@@ -44,7 +44,7 @@ const MemoisedAbilityRow = memo(AbilityRow, (prev, next) => prev === next);
 export const AbilityCard = ({ title, stats }: AbilityCardProps) => {
   if (!stats) return null;
 
-  const [ isOpen, setIsOpen ] = useState(false);
+  const [ isOpen, setIsOpen ] = useState(true);
 
   const statRows = Object.entries(ABILITY_ABBREVIATION).map(
     ([k, v], index) => {

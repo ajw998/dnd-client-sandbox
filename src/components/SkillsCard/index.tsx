@@ -44,7 +44,7 @@ const SkillRow = ({
 
 // TODO - Potentially can be abstracted away (See AbilityCard)
 export const SkillCard = ({ skillset }: SkillCardProps) => {
-  const [ isOpen, setIsOpen ] = useState(false);
+  const [ isOpen, setIsOpen ] = useState(true);
   const skillRows = Object.entries(CHARACTER_SKILL_TEXT).map(
     ([k, v], index) => {
       const data = skillset[k];

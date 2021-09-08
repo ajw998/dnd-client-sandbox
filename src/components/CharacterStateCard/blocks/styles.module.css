@@ -19,3 +19,13 @@
 .healthIcon {
   color: #fc4f30;
 }
+
+.criticalHealth {
+  animation: blinker 3s infinite;
+}
+
+@keyframes blinker {
+  50% { 
+    opacity: 0;
+  }
+}
