@@ -1,0 +1,251 @@
+[
+  {
+    "timestamp": 1631052824412,
+    "files": [
+      {
+        "filename": "bundle.259c5.css",
+        "previous": 444,
+        "size": 0,
+        "diff": -444
+      },
+      {
+        "filename": "bundle.*****.esm.js",
+        "previous": 8390,
+        "size": 168469,
+        "diff": 160079
+      },
+      {
+        "filename": "polyfills.*****.esm.js",
+        "previous": 2179,
+        "size": 2179,
+        "diff": 0
+      },
+      {
+        "filename": "route-home.chunk.df08e.css",
+        "previous": 75,
+        "size": 0,
+        "diff": -75
+      },
+      {
+        "filename": "route-home.chunk.*****.esm.js",
+        "previous": 253,
+        "size": 235,
+        "diff": -18
+      },
+      {
+        "filename": "route-notfound.chunk.5fff2.css",
+        "previous": 65,
+        "size": 0,
+        "diff": -65
+      },
+      {
+        "filename": "route-notfound.chunk.*****.esm.js",
+        "previous": 300,
+        "size": 299,
+        "diff": -1
+      },
+      {
+        "filename": "route-profile.chunk.7bcae.css",
+        "previous": 78,
+        "size": 0,
+        "diff": -78
+      },
+      {
+        "filename": "route-profile.chunk.*****.esm.js",
+        "previous": 1094,
+        "size": 437,
+        "diff": -657
+      },
+      { "filename": "sw-esm.js", "previous": 9597, "size": 9595, "diff": -2 },
+      {
+        "filename": "bundle.b5c95.js",
+        "previous": 8367,
+        "size": 0,
+        "diff": -8367
+      },
+      {
+        "filename": "polyfills.2c4a5.js",
+        "previous": 2177,
+        "size": 2177,
+        "diff": 0
+      },
+      {
+        "filename": "route-home.chunk.1a936.js",
+        "previous": 257,
+        "size": 0,
+        "diff": -257
+      },
+      {
+        "filename": "route-notfound.chunk.3f1a4.js",
+        "previous": 298,
+        "size": 0,
+        "diff": -298
+      },
+      {
+        "filename": "route-profile.chunk.b1a05.js",
+        "previous": 1098,
+        "size": 0,
+        "diff": -1098
+      },
+      {
+        "filename": "index.html",
+        "previous": 1222,
+        "size": 1194,
+        "diff": -28
+      },
+      { "filename": "200.html", "previous": 833, "size": 818, "diff": -15 },
+      {
+        "filename": "bundle.e3182.css",
+        "previous": 0,
+        "size": 82843,
+        "diff": 82843
+      },
+      {
+        "filename": "route-home.chunk.9988b.css",
+        "previous": 0,
+        "size": 75,
+        "diff": 75
+      },
+      {
+        "filename": "route-notfound.chunk.2a09b.css",
+        "previous": 0,
+        "size": 65,
+        "diff": 65
+      },
+      {
+        "filename": "route-profile.chunk.dc937.css",
+        "previous": 0,
+        "size": 78,
+        "diff": 78
+      },
+      {
+        "filename": "bundle.33df9.js",
+        "previous": 0,
+        "size": 168419,
+        "diff": 168419
+      },
+      {
+        "filename": "route-home.chunk.9b3c3.js",
+        "previous": 0,
+        "size": 239,
+        "diff": 239
+      },
+      {
+        "filename": "route-notfound.chunk.05fb1.js",
+        "previous": 0,
+        "size": 298,
+        "diff": 298
+      },
+      {
+        "filename": "route-profile.chunk.82c07.js",
+        "previous": 0,
+        "size": 448,
+        "diff": 448
+      }
+    ]
+  },
+  {
+    "timestamp": 1630996267083,
+    "files": [
+      {
+        "filename": "ssr-build/ssr-bundle.f949c.css",
+        "previous": 601,
+        "size": 0,
+        "diff": -601
+      },
+      {
+        "filename": "ssr-build/ssr-bundle.js",
+        "previous": 4118,
+        "size": 0,
+        "diff": -4118
+      },
+      {
+        "filename": "bundle.259c5.css",
+        "previous": 0,
+        "size": 444,
+        "diff": 444
+      },
+      {
+        "filename": "bundle.*****.esm.js",
+        "previous": 0,
+        "size": 8390,
+        "diff": 8390
+      },
+      {
+        "filename": "polyfills.*****.esm.js",
+        "previous": 0,
+        "size": 2179,
+        "diff": 2179
+      },
+      {
+        "filename": "route-home.chunk.df08e.css",
+        "previous": 0,
+        "size": 75,
+        "diff": 75
+      },
+      {
+        "filename": "route-home.chunk.*****.esm.js",
+        "previous": 0,
+        "size": 253,
+        "diff": 253
+      },
+      {
+        "filename": "route-notfound.chunk.5fff2.css",
+        "previous": 0,
+        "size": 65,
+        "diff": 65
+      },
+      {
+        "filename": "route-notfound.chunk.*****.esm.js",
+        "previous": 0,
+        "size": 300,
+        "diff": 300
+      },
+      {
+        "filename": "route-profile.chunk.7bcae.css",
+        "previous": 0,
+        "size": 78,
+        "diff": 78
+      },
+      {
+        "filename": "route-profile.chunk.*****.esm.js",
+        "previous": 0,
+        "size": 1094,
+        "diff": 1094
+      },
+      { "filename": "sw-esm.js", "previous": 0, "size": 9597, "diff": 9597 },
+      {
+        "filename": "bundle.b5c95.js",
+        "previous": 0,
+        "size": 8367,
+        "diff": 8367
+      },
+      {
+        "filename": "polyfills.2c4a5.js",
+        "previous": 0,
+        "size": 2177,
+        "diff": 2177
+      },
+      {
+        "filename": "route-home.chunk.1a936.js",
+        "previous": 0,
+        "size": 257,
+        "diff": 257
+      },
+      {
+        "filename": "route-notfound.chunk.3f1a4.js",
+        "previous": 0,
+        "size": 298,
+        "diff": 298
+      },
+      {
+        "filename": "route-profile.chunk.b1a05.js",
+        "previous": 0,
+        "size": 1098,
+        "diff": 1098
+      },
+      { "filename": "index.html", "previous": 0, "size": 1222, "diff": 1222 },
+      { "filename": "200.html", "previous": 0, "size": 833, "diff": 833 }
+    ]
+  }
+]

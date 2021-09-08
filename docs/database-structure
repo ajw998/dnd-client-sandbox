@@ -1,0 +1,17 @@
+# Firestore
+
+- meta
+  - player-id-1
+    - id
+    - class
+    - race
+  - player-id-2
+- player
+  - ability
+    - strength
+    - constitution
+    - dexterity
+    - wisdom
+    - charisma
+    - intelligence
+  - state
