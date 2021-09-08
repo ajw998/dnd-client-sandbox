@@ -2,6 +2,9 @@ import { h } from 'preact';
 import styles from '../AbilityCard/styles.module.css';
 import { useEffect, useState, memo } from 'preact/compat';
 import { ABILITY_ABBREVIATION } from '../../constants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { Collapse } from 'react-collapse';
 
 export interface AbilityRowProps {
   name: string;
@@ -41,6 +44,8 @@ const MemoisedAbilityRow = memo(AbilityRow, (prev, next) => prev === next);
 export const AbilityCard = ({ title, stats }: AbilityCardProps) => {
   if (!stats) return null;
 
+  const [ isOpen, setIsOpen ] = useState(false);
+
   const statRows = Object.entries(ABILITY_ABBREVIATION).map(
     ([k, v], index) => {
       return (
@@ -53,7 +58,16 @@ export const AbilityCard = ({ title, stats }: AbilityCardProps) => {
     },
   );
 
-  return <section className={styles['abilityCard']}>{statRows}</section>;
+  return (
+    <section className={styles['abilityCard']}>
+      <h4 className={styles['header']} onClick={ () => setIsOpen(!isOpen) }>
+        <FontAwesomeIcon icon={ isOpen ? faCaretDown : faCaretRight } />  Ability
+      </h4>
+      <Collapse isOpened={ isOpen }>
+        {statRows}
+      </Collapse>
+    </section>
+  );
 };
 
 export default memo(AbilityCard, (prev, next) => prev === next);

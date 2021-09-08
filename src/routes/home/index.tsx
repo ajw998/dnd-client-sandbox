@@ -4,6 +4,7 @@ import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 import { useAppSelector } from '../../store/hooks';
 import type {
   CharacterStats,
+  DND5eCharacterSkills,
   DND5ePlayerAbility,
   DND5eCharacterState,
 } from '../../types';
@@ -14,8 +15,11 @@ const Home = () => {
   // TODO use table-layout to prevent reflow
   useFirestoreConnect('players');
 
-  const players: CharacterStats<DND5ePlayerAbility, DND5eCharacterState> =
-    useAppSelector((state) => state.firestore.data.players);
+  const players: CharacterStats<
+    DND5ePlayerAbility,
+    DND5eCharacterState,
+    DND5eCharacterSkills
+  > = useAppSelector((state) => state.firestore.data.players);
   let cards;
 
   if (players) {
@@ -35,7 +39,7 @@ const Home = () => {
 
   return (
     <div className={style.home}>
-      <div style={{ display: 'flex' }}>{cards}</div>
+      <div style={{ height: '1200px', display: 'flex' }}>{cards}</div>
     </div>
   );
 };

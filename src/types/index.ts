@@ -1,18 +1,24 @@
 export type CharacterState<T> = T;
 
+// These are attributes that is likely to be left
+// unchanged for a very long time
 export interface CharacterMeta {
   class: DND5eClass;
+  passiveWisdom: number;
   name: string;
 }
 
-export interface DND5ePlayerAbility {
-  strength: number;
-  dexterity: number;
-  constitution: number;
-  intelligence: number;
-  wisdom: number;
-  charisma: number;
-}
+export type DND5ePlayerAbility = {
+  [P in DND5eAbility]: number;
+};
+
+export type DND5eAbility =
+  | 'strength'
+  | 'dexterity'
+  | 'constitution'
+  | 'intelligence'
+  | 'wisdom'
+  | 'charisma';
 
 export type DND5eClass =
   | 'fighter'
@@ -26,8 +32,30 @@ export type DND5eClass =
   | 'warlock'
   | 'wizard';
 
+export type DND5eCharacterSkills =
+  | 'acrobatics'
+  | 'animalHandling'
+  | 'arcana'
+  | 'athletics'
+  | 'deception'
+  | 'history'
+  | 'insight'
+  | 'intimidation'
+  | 'investigation'
+  | 'medicine'
+  | 'nature'
+  | 'perception'
+  | 'performance'
+  | 'persuasion'
+  | 'religion'
+  | 'sleightOfHand'
+  | 'stealth'
+  | 'survival';
+
 export interface DND5eCharacterState {
+  proficiencyBonus: number;
   armor: number;
+  deathSaves: DeathSaves;
   gold: number;
   hitDice: string;
   hp: number;
@@ -38,7 +66,16 @@ export interface DND5eCharacterState {
   xp: number;
 }
 
-export type DND5EPlayerAbilityAbbreviation = {
+interface DeathSaves {
+  successes: number;
+  failures: number;
+}
+
+export type DisplayStringMap<T> = {
+  [P in keyof T]: string;
+};
+
+export type DND5ePlayerAbilityAbbreviation = {
   [P in keyof DND5ePlayerAbility]: string;
 };
 
@@ -46,13 +83,23 @@ export type PlayerAbility<T> = {
   [P in keyof T]: number;
 };
 
-export interface CharacterStats<T, U> {
+export interface CharacterStats<T, U, S> {
   meta: CharacterMeta;
   ability: PlayerAbility<T>;
+  skill: SkillSet<S, T>;
   state: CharacterState<U>;
 }
 
-// Application-defined character roles
+export type SkillSet<T, U> = {
+  [P in keyof T]: Skill<U>;
+};
+
+export interface Skill<T> {
+  isProficient: boolean;
+  value: number;
+  modifier: T;
+}
+
 export type CharacterRole =
   | 'player'
   | 'companion'

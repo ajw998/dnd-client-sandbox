@@ -9,5 +9,13 @@
 }
 
 .deathSavesFailure {
- color: red;
+  color: #fc4f30;
+}
+
+.deathSavesFailure + .deathSavesFailure {
+  margin-left: 5px;
+}
+
+.healthIcon {
+  color: #fc4f30;
 }

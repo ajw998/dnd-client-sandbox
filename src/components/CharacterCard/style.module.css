@@ -1,9 +1,18 @@
 .characterCard {
+  height: max-content;
   border-radius: 5px;
   margin-bottom: 1em;
-  padding: 10px 5px 10px 5px;
-  width: 20em;
+  padding: 10px 10px 10px 10px;
+  width: 15em;
   box-shadow: 3px 3px 5px lightgrey;
+  position: relative;
+  animation: fade 1s ease-in;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
 }
 
 .characterCard:nth-child(2n) {
@@ -21,10 +30,12 @@
   word-spacing: 100em;
   text-align: center;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .playerClass {
   margin-top: 5px;
   text-align: center;
   font-style: italic;
+  text-transform: capitalize;
 }

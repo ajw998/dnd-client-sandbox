@@ -1,5 +1,7 @@
 import { h } from 'preact';
 import { memo } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoins } from '@fortawesome/free-solid-svg-icons';
 
 interface GoldBlockProps {
   gold: number;
@@ -7,7 +9,7 @@ interface GoldBlockProps {
 export const GoldBlock = ({ gold }: GoldBlockProps) => {
   return (
     <div>
-      <b>Gold</b>: {gold}
+      <FontAwesomeIcon color={'#e5ae38'} icon={faCoins} /> {gold}
     </div>
   );
 };
