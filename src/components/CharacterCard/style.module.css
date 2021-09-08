@@ -1,0 +1,21 @@
+.characterCard {
+  border: 1px solid black;
+  width: 10em;
+  margin-bottom: 1em;
+  padding: 10px 5px 10px 5px;
+  border-radius: 5px;
+}
+
+.characterCard:nth-child(2n) {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.infoPillBlock {
+  text-align: center;
+}
+
+.playerName {
+  text-align: center;
+  margin: 0;
+}

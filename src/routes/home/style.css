@@ -1,0 +1,6 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  padding: 56px 20px;
+  min-height: 100%;
+}

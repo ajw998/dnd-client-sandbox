@@ -1,0 +1,12 @@
+.abilityCard {
+  margin: 0.5em 0 0.5em 0;
+}
+
+.abilityRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-origin: border-box;
+  transition: 0.5s linear;
+  padding: 0.5px 0 0.5px 0;
+}
