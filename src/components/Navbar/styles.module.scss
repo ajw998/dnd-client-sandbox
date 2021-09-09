@@ -1,0 +1,56 @@
+@import '../../style/variables.scss';
+@import '../../style/color.scss';
+
+.navBar {
+  height: 100%;
+  grid-area: nav;
+  grid-column-end: 2;
+  display: inline-block;
+  width: $navbar-width;
+  text-align: center;
+  background: $white;
+  z-index: 999;
+  transition: 1s;
+}
+
+.navBar:hover {
+  box-shadow: 1px 2px 5px lightgrey;
+}
+
+// TODO - Check whether this is correct
+.navActive {
+  color: $yellow !important;
+}
+
+.navBarList {
+  margin: 0;
+  list-style-type: none;
+  padding: $global-downwards-shift;
+}
+
+.navItem {
+  display: block;
+  text-decoration: none;
+}
+
+.navItemAnchor {
+  color: $black;
+}
+
+.navItem + .navItem {
+  margin-top: 2em;
+}
+
+.navItemIcon {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navItemIcon:hover {
+  color: $yellow;
+  transition: 0.5s;
+}
+
+.navHomeIcon {
+  border-bottom: 1px solid lightgrey;
+}

@@ -1,0 +1,47 @@
+@import '../../../style/variables.scss';
+@import '../../../style/color.scss';
+
+.attackRollCalculatorContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.targetSection {
+  padding: $global-content-padding;
+  background: $white;
+}
+
+.playerSection {
+  padding: $global-content-padding;
+  background: $white;
+}
+
+.slam {
+  animation: slam 1s;
+  animation-timing-function: ease-in;
+  color: #C41818;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  
+}
+
+@keyframes slam
+{
+  0%
+  {
+    transform: scale(10, 10);
+    opacity: 0;
+  }
+  
+  40%
+  {
+    opacity: 0;
+  }
+  
+  100%
+  {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}

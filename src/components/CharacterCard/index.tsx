@@ -1,5 +1,6 @@
 import { h } from 'preact';
-import styles from './style.module.css';
+import { useState } from 'preact/compat';
+import styles from './style.module.scss';
 import type {
   DND5eClass,
   DND5eCharacterSkills,
@@ -9,12 +10,14 @@ import type {
   CharacterStats,
 } from '../../types';
 import { PlayerStateCard } from '../CharacterStateCard';
-import PassiveWisdom from './PassiveWisdom';
 import AbilityCard from '../AbilityCard';
 import SkillCard from '../SkillsCard';
 import InfoPill from '../InfoPill';
 import { getCharacterRole } from '../../utils/getCharacterRole';
 import { CHARACTER_ROLE_COLOUR, CHARACTER_ROLE } from '../../constants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { Collapse } from 'react-collapse';
 
 export interface CharacterCardProps {
   // Internal database id string
@@ -47,12 +50,13 @@ export const CharacterCard = ({
   characterClass,
   isPlayable,
 }: CharacterCardProps) => {
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
     <div
       className={styles['characterCard']}
-      style={{ backgroundColor: isPlayable ? '#f3f3f3' : 'inherit' }}
+      style={{ backgroundColor: isPlayable ? '#f3f3f3' : '#fff' }}
     >
-      <PassiveWisdom value={playerStats.meta.passiveWisdom ?? 0} />
       <h3 className={styles['playerName']}>{name}</h3>
       <div className={styles['playerClass']}>{characterClass}</div>
       <div className={styles['infoPillBlock']}>
@@ -68,8 +72,13 @@ export const CharacterCard = ({
         })}
       </div>
       <PlayerStateCard state={playerStats.state} />
-      <AbilityCard title={name} stats={playerStats.ability} />
-      {playerStats.skill && <SkillCard skillset={playerStats.skill} />}
+      <Collapse isOpened={ isOpen }>
+        <AbilityCard title={name} stats={playerStats.ability} />
+        {playerStats.skill && <SkillCard skillset={playerStats.skill} />}
+      </Collapse>
+      <div className={ styles['expandArrow']} onClick={ () => setIsOpen(!isOpen) }>
+        <FontAwesomeIcon icon={isOpen? faCaretUp : faCaretDown} />
+      </div>
     </div>
   );
 };

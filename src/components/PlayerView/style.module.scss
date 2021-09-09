@@ -1,0 +1,16 @@
+.home {
+  display: grid;
+  min-height: 100%;
+  margin: 0 auto;
+  grid-template-areas: 
+	  "status"
+	  "characters";
+  grid-template-rows: 50px 1fr;
+}
+
+.characterCardsSection {
+  grid-area: characters;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

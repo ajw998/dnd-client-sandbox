@@ -2,23 +2,28 @@ import { FunctionalComponent, h } from 'preact';
 import { Route, Router } from 'preact-router';
 
 import PlayerView from './PlayerView';
-import Profile from '../routes/profile';
+import { CalculatorView } from './CalcuatorView';
 import NotFoundPage from '../routes/notfound';
-import Header from './Header';
-import styles from './styles.module.css';
+import AsyncRoute from 'preact-async-route';
+import styles from './styles.module.scss';
+import NavBar from './Navbar';
+import { NAVIGATION_ITEM } from '../constants';
+import { Footer } from './Footer';
 
 const App: FunctionalComponent = () => {
   return (
-    <div id='preact_root'>
-      <Header />
-      <div className={ styles['main'] }>
+    <main className={styles['main']}>
+      <NavBar links={NAVIGATION_ITEM} />
+      <div className={styles['content']}>
         <Router>
-        <Route path='/' component={PlayerView} />
-        <Route path='/:role' component={Profile} />
-        <NotFoundPage default />
+          <AsyncRoute path='/' component={PlayerView} />
+          <Route path='/calculator' component={CalculatorView} />
+          <Route path='/details/:id' component={PlayerView} />
+          <NotFoundPage default />
         </Router>
       </div>
-    </div>
+      <Footer />
+    </main>
   );
 };
 

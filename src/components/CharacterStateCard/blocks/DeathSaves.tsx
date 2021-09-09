@@ -1,8 +1,8 @@
 import { h } from 'preact';
 import { memo } from 'preact/compat';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSkull } from '@fortawesome/free-solid-svg-icons';
+import { faBookDead } from '@fortawesome/free-solid-svg-icons';
 
 interface DeathSavesProps {
   successes: number;
@@ -15,13 +15,16 @@ export const DeathSavesBlock = ({
 }: DeathSavesProps) => {
   return (
     <div className={styles['deathSavesBlock']}>
-      {Array.from({ length: successes }).map((_) => (
-        <span className={styles['deathSavesSuccess']}>&#10004;</span>
+      {Array.from({ length: successes }).map((_, index) => (
+        <span key={index} className={styles['deathSavesSuccess']}>
+          &#10004;
+        </span>
       ))}
-      {Array.from({ length: failures }).map((_) => (
+      {Array.from({ length: failures }).map((_, index) => (
         <FontAwesomeIcon
+          key={index}
           size={'sm'}
-          icon={faSkull}
+          icon={faBookDead}
           className={styles['deathSavesFailure']}
         />
       ))}

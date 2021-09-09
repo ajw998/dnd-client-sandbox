@@ -1,3 +1,5 @@
+@import '../../../style/color.scss';
+
 .deathSavesBlock {
   min-height: 1.5em;
   font-size: 1.2em;
@@ -17,7 +19,7 @@
 }
 
 .healthIcon {
-  color: #fc4f30;
+  color: $red;
 }
 
 .criticalHealth {
@@ -25,7 +27,15 @@
 }
 
 @keyframes blinker {
-  50% { 
+  50% {
     opacity: 0;
   }
+}
+
+.goldIcon {
+  color: $yellow;
+}
+
+.tooltip { 
+  padding: 0.5em 0.2em 0.5em 0.2em;
 }

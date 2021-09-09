@@ -1,0 +1,15 @@
+@import '../../style/color.scss';
+
+.gameStateBar {
+  background: $white;
+  border-radius: 5px;
+  font-size: 15px;
+  grid-area: status; 
+  height: 40px;
+  padding: 1em 1em 1em 1em;
+  text-align: center;
+}
+
+.gameStateBar:hover {
+  box-shadow: 1px 2px 5px lightgrey;
+}

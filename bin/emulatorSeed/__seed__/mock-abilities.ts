@@ -3,7 +3,6 @@ export const mockAbilityStats = {
     meta: {
       class: 'fighter',
       name: 'Salazar Turami',
-      passiveWisdom: 13,
     },
     ability: {
       strength: 16,
@@ -53,13 +52,13 @@ export const mockAbilityStats = {
       deathSaves: { successes: 2, failures: 0 },
       xp: 675,
       gold: 11,
+      passiveWisdom: 13,
     },
   },
   'mock-dwarf': {
     meta: {
       class: 'dwarf',
       name: 'Vondal Battlehammer',
-      passiveWisdom: 13,
     },
     ability: {
       strength: 14,
@@ -109,13 +108,13 @@ export const mockAbilityStats = {
       deathSaves: { successes: 0, failures: 0 },
       xp: 425,
       gold: 3,
+      passiveWisdom: 13,
     },
   },
   'mock-rogue': {
     meta: {
       class: 'rogue',
       name: 'Reed Greenbottle',
-      passiveWisdom: 10,
     },
     ability: {
       strength: 8,
@@ -161,13 +160,13 @@ export const mockAbilityStats = {
       deathSaves: { successes: 1, failures: 0 },
       xp: 575,
       gold: 6,
+      passiveWisdom: 10,
     },
   },
   'mock-wizard': {
     meta: {
       class: 'wizard',
       name: 'Naivara Ilphelkiir',
-      passiveWisdom: 13,
     },
     ability: {
       strength: 10,
@@ -213,6 +212,7 @@ export const mockAbilityStats = {
       deathSaves: { successes: 1, failures: 0 },
       xp: 225,
       gold: 10,
+      passiveWisdom: 13,
     },
   },
 };

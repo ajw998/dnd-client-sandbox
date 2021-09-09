@@ -4,7 +4,6 @@ export type CharacterState<T> = T;
 // unchanged for a very long time
 export interface CharacterMeta {
   class: DND5eClass;
-  passiveWisdom: number;
   name: string;
 }
 
@@ -53,6 +52,7 @@ export type DND5eCharacterSkills =
   | 'survival';
 
 export interface DND5eCharacterState {
+  passiveWisdom: number;
   proficiencyBonus: number;
   armor: number;
   deathSaves: DeathSaves;

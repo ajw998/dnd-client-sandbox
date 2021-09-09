@@ -2,6 +2,7 @@ import { h } from 'preact';
 import { memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
+import styles from './styles.module.scss';
 
 interface GoldBlockProps {
   gold: number;
@@ -9,9 +10,9 @@ interface GoldBlockProps {
 export const GoldBlock = ({ gold }: GoldBlockProps) => {
   return (
     <div>
-      <FontAwesomeIcon color={'#e5ae38'} icon={faCoins} /> {gold}
+      <FontAwesomeIcon className={styles['goldIcon']} icon={faCoins} /> {gold}
     </div>
   );
 };
 
-export default memo(GoldBlock, (prev, next) => prev === next);
+export default memo(GoldBlock);

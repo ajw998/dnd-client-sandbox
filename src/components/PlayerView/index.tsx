@@ -1,7 +1,9 @@
 import { h } from 'preact';
-import style from './style.css';
+import style from './style.module.scss';
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 import { useAppSelector } from '../../store/hooks';
+import { GameStateBar } from '../GameStateBar';
+import LoadingSpinner from '../LoadingSpinner';
 import type {
   CharacterStats,
   DND5eCharacterSkills,
@@ -15,8 +17,6 @@ const PlayerView = () => {
   // TODO use table-layout to prevent reflow
   useFirestoreConnect('players');
 
-  let cards;
-
   const players: CharacterStats<
     DND5ePlayerAbility,
     DND5eCharacterState,
@@ -24,33 +24,32 @@ const PlayerView = () => {
   > = useAppSelector((state) => state.firestore.data.players);
 
   if (!isLoaded(players)) {
-    return <span>Loading...</span>
+    return <LoadingSpinner size={'5x'} />;
   }
 
   if (isEmpty(players)) {
-    return <div className={style.home}>Empty</div>
+    return <div className={style.home}>Empty</div>;
   }
 
-  if (players) {
-    cards = Object.entries(players).map(([key, value], index) => {
-      return (
-        <CharacterCard
-          characterClass={value.meta.class}
-          key={index}
-          id={key}
-          isPlayable={false}
-          name={value.meta.name ?? 'unknown'}
-          playerStats={value}
-        />
-      );
-    });
-  }
+  const cards = Object.entries(players).map(([key, value], index) => {
+    return (
+      <CharacterCard
+        characterClass={value.meta.class}
+        key={index}
+        id={key}
+        isPlayable={false}
+        name={value.meta.name ?? 'unknown'}
+        playerStats={value}
+      />
+    );
+  });
 
-  return (
-    <div className={style.home}>
+  return <div className={style.home}>
+    <GameStateBar />
+    <section className={ style.characterCardsSection }>
       {cards}
-    </div>
-  );
+    </section>
+  </div>;
 };
 
 export default PlayerView;

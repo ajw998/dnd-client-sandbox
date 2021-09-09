@@ -1,0 +1,17 @@
+@import '../style/variables.scss';
+
+.main {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: $navbar-width auto;
+  grid-template-rows: 40px 1fr 30px;
+  grid-template-areas:
+    'nav content'
+    'nav content'
+    'nav footer';
+}
+
+.content {
+  grid-area: content;
+  padding: $global-content-padding;
+}

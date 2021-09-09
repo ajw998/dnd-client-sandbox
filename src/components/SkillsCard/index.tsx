@@ -5,13 +5,11 @@ import type {
   SkillSet,
 } from '../../types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
-import { Collapse } from 'react-collapse';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { h } from 'preact';
 import { useState, memo } from 'preact/compat';
 import { ABILITY_ABBREVIATION, CHARACTER_SKILL_TEXT } from '../../constants';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 interface SkillCardProps {
   skillset: SkillSet<DND5eCharacterSkills, DND5eAbility>;
@@ -44,7 +42,7 @@ const SkillRow = ({
 
 // TODO - Potentially can be abstracted away (See AbilityCard)
 export const SkillCard = ({ skillset }: SkillCardProps) => {
-  const [ isOpen, setIsOpen ] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
   const skillRows = Object.entries(CHARACTER_SKILL_TEXT).map(
     ([k, v], index) => {
       const data = skillset[k];
@@ -61,12 +59,10 @@ export const SkillCard = ({ skillset }: SkillCardProps) => {
   );
   return (
     <section>
-      <h4 className={styles['header']} onClick={ () => setIsOpen(!isOpen) }>
-        <FontAwesomeIcon icon={ isOpen ? faCaretDown : faCaretRight } />  Skills
+      <h4 className={styles['header']} onClick={() => setIsOpen(!isOpen)}>
+        Skills
       </h4>
-      <Collapse isOpened={ isOpen }>
-        {skillRows}
-      </Collapse>
+      {skillRows}
     </section>
   );
 };

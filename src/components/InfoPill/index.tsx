@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import { memo } from 'preact/compat';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 interface InfoPillProps {
   text: string;

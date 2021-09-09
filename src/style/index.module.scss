@@ -1,10 +1,12 @@
+@import './color.scss';
+
 html,
 body {
+  color: $black;
   margin: 0;
   background: #fafafa;
   font-weight: 400;
   font-family: 'Helvetica Neue';
-  color: #444;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

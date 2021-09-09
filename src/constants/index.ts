@@ -1,4 +1,28 @@
 import type { DND5ePlayerAbilityAbbreviation } from '../types';
+import type { NavData } from '../components/Navbar';
+import {
+  faUser,
+  faDiceD20,
+  faCalculator,
+} from '@fortawesome/free-solid-svg-icons';
+
+export const VERSION = '0.1';
+
+export const NAVIGATION_ITEM: NavData & { isHome?: boolean } = {
+  playerView: {
+    path: '/',
+    icon: faDiceD20,
+    isHome: true,
+  },
+  calculator: {
+    path: '/calculator',
+    icon: faCalculator,
+  },
+  characterDetails: {
+    path: '/details',
+    icon: faUser,
+  },
+};
 
 // The header that is shown to the user based on their application privilege
 export const HEADERS = {
@@ -6,6 +30,12 @@ export const HEADERS = {
   dm: 'Dungeon Master',
   admin: 'God',
 };
+
+export const SUBHEADER = {
+  player: 'with blackjack and hookers',
+  dm: 'All Hail the King',
+  admin: 'Do No Harm'
+}
 
 // Do not sort any values in this file
 // as the ordering of the keys are important

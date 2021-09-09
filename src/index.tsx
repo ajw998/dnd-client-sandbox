@@ -1,4 +1,4 @@
-import './style/index.css';
+import './style/index.module.scss';
 import { h } from 'preact';
 import App from './components/app';
 

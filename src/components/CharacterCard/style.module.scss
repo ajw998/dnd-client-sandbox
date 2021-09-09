@@ -1,18 +1,24 @@
+@import '../../style/color.scss';
+
 .characterCard {
-  height: max-content;
+  animation: fade 1s ease-in;
+  background: $white;
   border-radius: 5px;
+  height: max-content;
   margin-bottom: 1em;
   padding: 10px 10px 10px 10px;
-  width: 20em;
-  box-shadow: 3px 3px 5px lightgrey;
   position: relative;
-  animation: fade 1s ease-in;
+  width: 20em;
 }
 
 @keyframes fade {
   0% {
     opacity: 0;
   }
+}
+
+.characterCard:hover {
+  box-shadow: 3px 3px 5px lightgrey;
 }
 
 .characterCard:nth-child(2n) {
@@ -25,12 +31,10 @@
 }
 
 .playerName {
-  /* word-spacing is added as a hack to force a line break
-     on the first name and last name to ensure that the display is consistent */
-  word-spacing: 100em;
   text-align: center;
   margin: 0;
   text-transform: uppercase;
+  color: $black;
 }
 
 .playerClass {
@@ -40,3 +44,13 @@
   text-transform: capitalize;
 }
 
+.expandArrow {
+  cursor: pointer;
+  text-align: center;
+  padding: 1px;
+}
+
+.expandArrow:hover {
+  transition: 0.5s linear;
+  background: $grey-f0;
+}
