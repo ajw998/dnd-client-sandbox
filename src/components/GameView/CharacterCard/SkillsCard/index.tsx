@@ -3,12 +3,12 @@ import type {
   DND5eAbility,
   Skill,
   SkillSet,
-} from '../../types';
+} from '../../../../types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { h } from 'preact';
 import { useState, memo } from 'preact/compat';
-import { ABILITY_ABBREVIATION, CHARACTER_SKILL_TEXT } from '../../constants';
+import { ABILITY_ABBREVIATION, CHARACTER_SKILL_TEXT } from '../../../../constants';
 import styles from './styles.module.scss';
 
 interface SkillCardProps {

@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import styles from './styles.module.scss';
 import { useEffect, useState, memo } from 'preact/compat';
-import { ABILITY_ABBREVIATION } from '../../constants';
+import { ABILITY_ABBREVIATION } from '../../../../constants';
 
 export interface AbilityRowProps {
   name: string;

@@ -5,7 +5,7 @@ import LevelBlock from './blocks/Level';
 import PassiveWisdom from './blocks/PassiveWisdom';
 import Armor from './blocks/Armor';
 import style from './style.module.scss';
-import type { DND5eCharacterState } from '../../types';
+import type { DND5eCharacterState } from '../../../../types';
 
 // TODO - Abstract this type correctly
 interface PlayerStateCardProps {
@@ -17,8 +17,8 @@ export const PlayerStateCard = ({ state }: PlayerStateCardProps) => {
       <section className={style['stateGroup']}>
       <section className={ style['baseInfoBlock']}>
         <div>XP: { state.xp } </div>
-        <PassiveWisdom value={ state.passiveWisdom }/>
-        <Armor value={ state.armor }/>
+        <PassiveWisdom value={ state.passiveWisdom } />
+        <Armor value={ state.armor } />
         <LevelBlock level={state.level} />
       </section>
         <section className={ style['criticalInfoBlock'] }>

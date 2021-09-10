@@ -2,15 +2,15 @@ import { h } from 'preact';
 import style from './style.module.scss';
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 import { useAppSelector } from '../../store/hooks';
-import { GameStateBar } from '../GameStateBar';
-import LoadingSpinner from '../LoadingSpinner';
+import { GameStateBar } from './GameStateBar';
+import LoadingSpinner from '../common/LoadingSpinner';
 import type {
   CharacterStats,
   DND5eCharacterSkills,
   DND5ePlayerAbility,
   DND5eCharacterState,
 } from '../../types';
-import { CharacterCard } from '../CharacterCard';
+import { CharacterCard } from './CharacterCard';
 
 const PlayerView = () => {
   // TODO - There is a double re-render here

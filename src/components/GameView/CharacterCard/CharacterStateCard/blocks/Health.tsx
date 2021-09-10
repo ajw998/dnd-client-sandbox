@@ -35,7 +35,7 @@ export const HealthBlock = ({
         )}
         icon={isInCriticalHealth ? faHeartbeat : faHeart}
       />{' '}
-      {currentHp} (+{tempHp}) / {maxHp}
+      {currentHp} (+{tempHp}) /{maxHp}
     </div>
   );
 };

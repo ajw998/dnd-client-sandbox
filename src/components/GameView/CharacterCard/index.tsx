@@ -8,13 +8,13 @@ import type {
   DND5eCharacterState,
   CharacterRole,
   CharacterStats,
-} from '../../types';
-import { PlayerStateCard } from '../CharacterStateCard';
-import AbilityCard from '../AbilityCard';
-import SkillCard from '../SkillsCard';
-import InfoPill from '../InfoPill';
-import { getCharacterRole } from '../../utils/getCharacterRole';
-import { CHARACTER_ROLE_COLOUR, CHARACTER_ROLE } from '../../constants';
+} from '../../../types';
+import { PlayerStateCard } from './CharacterStateCard';
+import AbilityCard from './AbilityCard';
+import SkillCard from './SkillsCard';
+import InfoPill from '../../common/InfoPill';
+import { getCharacterRole } from '../../../utils/getCharacterRole';
+import { CHARACTER_ROLE_COLOUR, CHARACTER_ROLE } from '../../../constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { Collapse } from 'react-collapse';

@@ -1,5 +1,5 @@
 import type { CharacterRole } from '../types';
-import type { CharacterCardProps } from '../components/CharacterCard';
+import type { CharacterCardProps } from '../components/GameView/CharacterCard';
 
 type CharacterRoleData = Pick<
   CharacterCardProps,
