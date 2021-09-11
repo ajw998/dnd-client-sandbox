@@ -1,4 +1,8 @@
+export type Feature<T> =  T & { isFeatureEnabled: boolean} ;
+
 export type CharacterState<T> = T;
+
+export type Dices = 'd20' | 'd9' | 'd8' | 'd6' | 'd4';
 
 // These are attributes that is likely to be left
 // unchanged for a very long time

@@ -1,16 +1,29 @@
-@import '../../style/variables.scss';
+@import 'src/style/mixins';
+@import 'src/style/variables';
 @import '../../style/color.scss';
 
 .navBar {
-  height: 100%;
   grid-area: nav;
-  grid-column-end: 2;
-  display: inline-block;
-  width: $navbar-width;
   text-align: center;
   background: $white;
   z-index: 999;
   transition: 1s;
+
+  @include sm {
+    display: block;
+  }
+
+  @include md {
+    display: block;
+    border-bottom: 1px solid $grey-ee;
+  }
+
+  @include lg {
+    width: $navbar-width;
+    height: 100%;
+    grid-column-end: 2;
+    display: inline-block;
+  }
 }
 
 .navBar:hover {
@@ -25,12 +38,40 @@
 .navBarList {
   margin: 0;
   list-style-type: none;
-  padding: $global-downwards-shift;
+  @include xs {
+    padding: 0.5em 0 0 0;
+  }
+
+  @include sm {
+    padding: 0.5em 0 0 0;
+  }
+
+  @include md {
+    padding: 0.5em 0 0 0;
+  }
+
+  @include lg {
+    padding: $global-downwards-shift;
+  }
 }
 
 .navItem {
-  display: block;
   text-decoration: none;
+  @include xs {
+    display: inline-block;
+  }
+
+  @include sm {
+    display: inline-block;
+  }
+
+  @include md {
+    display: inline-block;
+  }
+
+  @include lg {
+    display: block;
+  }
 }
 
 .navItemAnchor {
@@ -38,7 +79,21 @@
 }
 
 .navItem + .navItem {
-  margin-top: 2em;
+  @include xs {
+    margin: 0 0 0 2em; 
+  }
+
+  @include sm {
+    margin: 0 0 0 2em; 
+  }
+  
+  @include md {
+    margin: 0 0 0 2em; 
+  }
+
+  @include lg {
+    margin: 2em 0 0 0;
+  }
 }
 
 .navItemIcon {

@@ -1,0 +1,29 @@
+@import 'src/style/color.scss';
+@import 'src/style/mixins.scss';
+
+.viewSwitcher {
+  grid-area: view-switcher;
+  text-align: center;
+}
+
+.viewSwitcherItem {
+  padding-bottom: 0.2em;
+  cursor: pointer;
+
+  &--disabled {
+    color: $grey-88;
+  }
+}
+
+.viewSwitcherItem + .viewSwitcherItem {
+  margin-left: 10px;
+}
+
+.viewSwitcherItem--enabled:hover {
+  border-bottom: 5px solid $yellow;
+}
+
+.viewSwitcherItem--active {
+  font-weight: bold;
+  border-bottom: 5px solid $yellow;
+}

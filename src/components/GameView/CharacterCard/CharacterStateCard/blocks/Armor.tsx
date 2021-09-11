@@ -11,23 +11,17 @@ export interface ArmorProps {
   tooltipText?: string;
 }
 
-export const ArmorBlock = ({
-  value,
-  tooltipText = 'Armor',
-}: ArmorProps) => {
-
+export const ArmorBlock = ({ value, tooltipText = 'Armor' }: ArmorProps) => {
   return (
     <div data-tip='armor' data-for='armor'>
-      <ReactTooltip className={styles['tooltip']} place={ 'bottom' } id='armor'>
+      <ReactTooltip className={styles['tooltip']} place={'bottom'} id='armor'>
         <span>{tooltipText}</span>
       </ReactTooltip>
       <FontAwesomeIcon
-        className={cn(
-          styles['armorIcon'],
-        )}
+        className={cn(styles['armorIcon'])}
         icon={faShieldAlt}
       />{' '}
-      { value }
+      {value}
     </div>
   );
 };

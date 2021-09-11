@@ -15,13 +15,13 @@ export const PlayerStateCard = ({ state }: PlayerStateCardProps) => {
   return (
     <div className={style['playerStateWrapper']}>
       <section className={style['stateGroup']}>
-      <section className={ style['baseInfoBlock']}>
-        <div>XP: { state.xp } </div>
-        <PassiveWisdom value={ state.passiveWisdom } />
-        <Armor value={ state.armor } />
-        <LevelBlock level={state.level} />
-      </section>
-        <section className={ style['criticalInfoBlock'] }>
+        <section className={style['baseInfoBlock']}>
+          <div>XP: {state.xp} </div>
+          <PassiveWisdom value={state.passiveWisdom} />
+          <Armor value={state.armor} />
+          <LevelBlock level={state.level} />
+        </section>
+        <section className={style['criticalInfoBlock']}>
           <HealthBlock maxHp={state.maxHp} currentHp={state.hp} />
           <GoldBlock gold={state.gold} />
         </section>

@@ -12,16 +12,12 @@ import { VERSION } from '../../constants';
 export const Footer = () => {
   return (
     <footer className={styles['footer']}>
-      <div style={ { display: 'flex', justifyContent: 'space-between'  }}>
+      <section className={ styles['metaInfo'] }>
         <CurrentTime />
         <GameId />
-      </div>
-      <div>
-        Dungeon & Dragons
-      </div>
-      <div>
-        Version v{VERSION}
-      </div>
+      </section>
+      <section className={ styles['breadcrumbs'] }>Dungeon & Dragons</section>
+      <section className={ styles['version'] }>Version v{VERSION}</section>
     </footer>
   );
 };

@@ -1,4 +1,4 @@
-@import '../../../style/color.scss';
+@import '../../../../../style/color.scss';
 
 .deathSavesBlock {
   min-height: 1.5em;
@@ -36,6 +36,6 @@
   color: $yellow;
 }
 
-.tooltip { 
+.tooltip {
   padding: 0.5em 0.2em 0.5em 0.2em;
 }

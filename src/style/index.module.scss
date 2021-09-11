@@ -1,12 +1,20 @@
 @import './color.scss';
+@import url('https://rsms.me/inter/inter.css');
 
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif;
+  }
+}
+
+// This file only contains non-class html modifications
 html,
 body {
   color: $black;
   margin: 0;
-  background: #fafafa;
+  background: $white;
   font-weight: 400;
-  font-family: 'Helvetica Neue';
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,4 +26,37 @@ body {
 
 #app {
   height: 100%;
+}
+
+// Custom scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $yellow;
+}
+
+input[type='number'] {
+  text-align: center;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
 }

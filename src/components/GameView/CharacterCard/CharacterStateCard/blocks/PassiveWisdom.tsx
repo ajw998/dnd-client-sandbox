@@ -9,13 +9,17 @@ export interface PassiveWisdomProps {
   tooltipText?: string;
   value: number;
 }
-export const PassiveWisdom = ({ 
-  tooltipText='Passive wisdom',
-  value 
+export const PassiveWisdom = ({
+  tooltipText = 'Passive wisdom',
+  value,
 }: PassiveWisdomProps) => {
   return (
     <div data-tip='passiveWisdom' data-for='passiveWisdom'>
-      <ReactTooltip className={styles['tooltip']} place={ 'bottom' } id='passiveWisdom'>
+      <ReactTooltip
+        className={styles['tooltip']}
+        place={'bottom'}
+        id='passiveWisdom'
+      >
         <span>{tooltipText}</span>
       </ReactTooltip>
       <FontAwesomeIcon icon={faEye} /> {value}

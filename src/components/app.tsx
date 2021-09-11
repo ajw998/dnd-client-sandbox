@@ -2,7 +2,7 @@ import { FunctionalComponent, h } from 'preact';
 import { Route, Router } from 'preact-router';
 
 import GameView from './GameView';
-import { CalculatorView } from './CalcuatorView';
+import { CalculatorView } from './CalculatorView';
 import NotFoundPage from '../routes/notfound';
 import AsyncRoute from 'preact-async-route';
 import styles from './styles.module.scss';

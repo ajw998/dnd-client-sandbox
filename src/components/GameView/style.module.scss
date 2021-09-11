@@ -1,15 +1,27 @@
-.home {
-  display: grid;
-  min-height: 100%;
-  margin: 0 auto;
-  grid-template-areas:
-	  "status"
-	  "characters";
-  grid-template-rows: 50px 1fr;
-}
+@import 'src/style/mixins.scss';
+@import 'src/style/variables.scss';
 
-.characterCardsSection {
-  grid-area: characters;
-  display: flex;
-  flex-direction: row;
+.gameView {
+  height: 100%;
+  display: grid;
+  margin: 0 auto;
+
+  @include md {
+    grid-template-rows: 40px 40px 1fr;
+    grid-template-areas:
+      "status"
+      "view-switcher"
+      "characters";
+    row-gap: 0.5em;
+  }
+
+  @include lg { 
+    grid-template-areas:
+      'status sidebar'
+      'view-switcher sidebar'
+      'characters sidebar';
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: 50px 10px 1fr;
+    row-gap: 1em;
+  }
 }

@@ -25,7 +25,11 @@ export const HealthBlock = ({
 
   return (
     <div data-tip='health' data-for='health'>
-      <ReactTooltip className={styles['tooltip']} place={ 'bottom' } id='health'>
+      <ReactTooltip
+        className={styles['tooltip']}
+        place={'bottom'}
+        id='health'
+      >
         <span>{tooltipText}</span>
       </ReactTooltip>
       <FontAwesomeIcon

@@ -1,0 +1,11 @@
+@import 'src/style/variables.scss';
+
+.calculatorView {
+  display: grid;
+  padding: $global-content-padding;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas:
+    "calculator-selector"
+    "content";
+  row-gap: 2em;
+}

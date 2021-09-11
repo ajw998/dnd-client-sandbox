@@ -1,13 +1,12 @@
-@import '../../style/color.scss';
+@import 'src/style/variables.scss';
+@import 'src/style/color.scss';
 
 .gameStateBar {
   background: $white;
-  border-radius: 5px;
   font-size: 15px;
-  grid-area: status; 
-  height: 40px;
-  padding: 1em 1em 1em 1em;
+  grid-area: status;
   text-align: center;
+  padding: $global-content-padding;
 }
 
 .gameStateBar:hover {

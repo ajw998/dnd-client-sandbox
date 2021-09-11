@@ -1,14 +1,19 @@
-@import '../../style/color.scss';
+@import '../../../style/color.scss';
+@import 'src/style/mixins.scss';
 
 .characterCard {
   animation: fade 1s ease-in;
   background: $white;
+  border: 1px solid $grey-b0;
   border-radius: 5px;
   height: max-content;
   margin-bottom: 1em;
   padding: 10px 10px 10px 10px;
   position: relative;
-  width: 20em;
+  min-width: 17.5%;
+  max-width: 25%;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes fade {
@@ -21,9 +26,8 @@
   box-shadow: 3px 3px 5px lightgrey;
 }
 
-.characterCard:nth-child(2n) {
+.characterCard:nth-child(n) {
   margin-right: 10px;
-  margin-left: 10px;
 }
 
 .infoPillBlock {

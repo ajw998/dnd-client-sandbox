@@ -18,6 +18,7 @@ import { CHARACTER_ROLE_COLOUR, CHARACTER_ROLE } from '../../../constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { Collapse } from 'react-collapse';
+import { useAppSelector } from '../../../store/hooks';
 
 export interface CharacterCardProps {
   // Internal database id string
@@ -40,17 +41,22 @@ export interface CharacterCardProps {
   isParty?: boolean;
   // Character's role in the game
   role?: Array<CharacterRole>;
+  // Check whether the character card is displayed in full
+  stacked?: boolean;
 }
 
 export const CharacterCard = ({
+  characterClass,
+  isParty = true,
+  isPlayable,
   name = '',
   playerStats,
-  isParty = true,
   role = [],
-  characterClass,
-  isPlayable,
+  stacked = false,
 }: CharacterCardProps) => {
   const [isOpen, setIsOpen] = useState(true);
+
+  const currentView = useAppSelector((state) => state.gameView.mainView);
 
   return (
     <div
@@ -72,13 +78,18 @@ export const CharacterCard = ({
         })}
       </div>
       <PlayerStateCard state={playerStats.state} />
-      <Collapse isOpened={ isOpen }>
+      <Collapse isOpened={!stacked || isOpen}>
         <AbilityCard title={name} stats={playerStats.ability} />
         {playerStats.skill && <SkillCard skillset={playerStats.skill} />}
       </Collapse>
-      <div className={ styles['expandArrow']} onClick={ () => setIsOpen(!isOpen) }>
-        <FontAwesomeIcon icon={isOpen? faCaretUp : faCaretDown} />
-      </div>
+      {currentView === 'global' && (
+        <div
+          className={styles['expandArrow']}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <FontAwesomeIcon icon={isOpen ? faCaretUp : faCaretDown} />
+        </div>
+      )}
     </div>
   );
 };

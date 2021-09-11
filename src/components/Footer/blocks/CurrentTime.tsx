@@ -4,10 +4,9 @@ import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import styles from './styles.module.scss';
 
 export const CurrentTime = () => {
-  return <div className={ styles['block'] }>
-      <FontAwesomeIcon
-        icon={faCalendar}
-      />{' '}
-  {new Date().toLocaleDateString()}
-  </div>;
+  return (
+    <div className={styles['block']}>
+      <FontAwesomeIcon icon={faCalendar} /> {new Date().toLocaleDateString()}
+    </div>
+  );
 };

@@ -1,37 +1,62 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import {
+  calculatePlayerRoll,
+  isSuccessfulAttack,
+} from './utils/calculateAttackRoll';
 
-interface Modifier {
-  modifier: string;
-  value: number;
-}
+export type InputValue = number | undefined;
+
+export type AttackRollCalculatorInitialState = {
+  d20Value: InputValue;
+  targetArmor: InputValue;
+  proficiencyBonus: InputValue;
+  modifier: InputValue;
+  finalValue: number;
+  isSuccess: boolean;
+};
 
 export const attackRollCalculatorSlice = createSlice({
   name: 'attackRollCalculator',
   initialState: {
-    d20value: 0,
-    targetArmor: 0,
-    proficiencyBonus: 0,
-    modifiers: [] as Array<Modifier>,
+    d20Value: 0 as InputValue,
+    targetArmor: 0 as InputValue,
+    proficiencyBonus: 0 as InputValue,
+    modifier: 0 as InputValue,
     finalValue: 0,
-    isSuccess: false
-  },
+    isSuccess: false,
+  } as AttackRollCalculatorInitialState,
   reducers: {
-    addModifier: (state, action: PayloadAction<Modifier>) => {
-      state.modifiers.push(action.payload)
+    setModifier: (state, action: PayloadAction<InputValue>) => {
+      state.modifier = action.payload;
     },
-    addD20RollValue: (state, action: PayloadAction<number>) => {
-      state.d20value = action.payload;
+    setD20Value: (state, action: PayloadAction<InputValue>) => {
+      state.d20Value = action.payload;
     },
-    setTargetArmor: (state, action: PayloadAction<number>) => {
+    setTargetArmor: (state, action: PayloadAction<InputValue>) => {
       state.targetArmor = action.payload;
     },
-    setProficiencyBonus: (state, action: PayloadAction<number>) => {
+    setProficiencyBonus: (state, action: PayloadAction<InputValue>) => {
       state.proficiencyBonus = action.payload;
     },
-    setSuccess: (state) => { state.isSuccess = true }
-  }
-})
+    calculateAttackRoll: (state) => {
+      const playerRoll = calculatePlayerRoll(state);
+      state.finalValue = playerRoll;
+      // Automatically fail the user hit if the player rolls a 1 on d20;
+      // Automatic success on natural 20;
+      state.isSuccess = 
+        state.d20Value === 1 ? false : 
+        state.d20Value === 20 ? true :
+      isSuccessfulAttack(state.targetArmor, playerRoll);
+    },
+  },
+});
 
-export const { addD20RollValue, setProficiencyBonus, setTargetArmor } = attackRollCalculatorSlice.actions;
+export const {
+  setD20Value,
+  setModifier,
+  calculateAttackRoll,
+  setProficiencyBonus,
+  setTargetArmor,
+} = attackRollCalculatorSlice.actions;
 
 export default attackRollCalculatorSlice.reducer;

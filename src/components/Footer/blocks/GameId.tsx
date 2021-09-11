@@ -9,12 +9,11 @@ interface GameIdProps {
 }
 
 export const GameId = ({ gameId }: GameIdProps) => {
-  return <div className={ styles['block'] }>
-      <FontAwesomeIcon
-        icon={faFingerprint}
-      />{' '}
-  { gameId ?? Date.now()}
-  </div>;
+  return (
+    <div className={styles['block']}>
+      <FontAwesomeIcon icon={faFingerprint} /> {gameId ?? Date.now()}
+    </div>
+  );
 };
 
-export default memo(GameId)
+export default memo(GameId);

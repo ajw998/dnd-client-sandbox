@@ -34,8 +34,8 @@ export const HEADERS = {
 export const SUBHEADER = {
   player: 'with blackjack and hookers',
   dm: 'All Hail the King',
-  admin: 'Do No Harm'
-}
+  admin: 'Do No Harm',
+};
 
 // Do not sort any values in this file
 // as the ordering of the keys are important
@@ -84,3 +84,5 @@ export const CHARACTER_SKILL_TEXT = {
   stealth: 'Stealth',
   survival: 'Survival',
 };
+
+export const ATTACK_ROLL_DESCRIPTION = `When you make an attack, your attack roll determines whether the attack hits or misses. To make an attack roll, roll a d20 and add the appropriate modifiers. If the total of the roll plus modifiers equals or exceeds the target’s Armor Class (AC), the attack hits. Each character’s AC is shown on the character sheet, and each monster’s AC is in the monster’s stat block.`;

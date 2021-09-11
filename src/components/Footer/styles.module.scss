@@ -1,11 +1,51 @@
 @import '../../style/variables.scss';
 @import '../../style/color.scss';
+@import 'src/style/mixins.scss';
 
 .footer {
   color: $white;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-areas:
+    "meta breadcrumbs version";
+  grid-template-columns: repeat(24, [col-start] 1fr);
   background: $yellow;
   grid-area: footer;
   padding: 0.5em 1em 0 1em;
+  z-index: 9999;
+
+  @include xs {
+    display: none;
+  }
+
+  @include sm {
+    display: none;
+  }
+
+  @include lg {
+    display: grid;
+  }
+}
+
+.metaInfo {
+  display: flex;
+  grid-area: meta;
+  grid-column: 1/8;
+}
+
+.breadcrumbs {
+  grid-area: breadcrumbs;
+  grid-column: 12/14;
+
+  @include md {
+    grid-column: 12/18;
+  }
+
+  @include lg {
+    grid-column: 12/18;
+  }
+}
+
+.version {
+  grid-area: version;
+  grid-column: -1;
 }

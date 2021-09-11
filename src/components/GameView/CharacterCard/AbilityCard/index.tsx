@@ -55,9 +55,7 @@ export const AbilityCard = ({ title, stats }: AbilityCardProps) => {
 
   return (
     <section className={styles['abilityCard']}>
-      <h4 className={styles['header']}>
-        Abilities
-      </h4>
+      <h4 className={styles['header']}>Abilities</h4>
       {statRows}
     </section>
   );
